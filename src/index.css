@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fff;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+
+  font-family: 'Cinzel Decorative', cursive;
+}
+
+.App::before {
+  content: '';
+  background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXlmM2k3NnkweXNrcTh3YnN4eGRxZ3F3azlvbW5tMm12Ymh3N2lsciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/k3CeSrt9IZ6aorWCy1/giphy.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+
+/* App component */
+h1,
+h2 {
+  word-spacing: 12px;
+  letter-spacing: 1px;
+}
+
+.loader {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 3rem 0;
+
+  font-size: 1.5rem;
+}
+
+.title {
+  color: var(--primary-color);
+
+  padding-top: 2rem;
+  font-size: 3.25rem;
+  text-align: center;
+
+  text-shadow: 0px 1px 1px #4d4d4d;
+}
+
+.inp-btn-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+input {
+  width: 500px;
+  font-size: 1.05rem;
+  padding: 0.6rem 0.5rem;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #666;
+}
+
+input:focus {
+  border: 1px solid var(--primary-color);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.05rem;
+  margin-left: 2rem;
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  box-shadow: 1px 1px 4px rgba(56, 189, 248, .5);
+}
+
+button:hover {
+  box-shadow: 2px 2px 8px rgba(56, 189, 248, 1);
+}
+
+
+/* WeatherData component */
+.weather-cards-container {
+  margin: 7rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather-for {
+  text-align: center;
+  margin: 3rem 0;
+  color: var(--primary-color);
+}
+
+/* WeatherCard component */
+.weather-card {
+  width: 150px;
+  padding: 0.5rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  transition: transform 0.1s ease-out;
+
+  background-color: rgba(135, 206, 235, 0.2);
+}
+
+.weather-card:hover {
+  transform: scale(.95);
+}
+
+.icon {
+  font-size: 3rem;
+}
+
+.day {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.min-max {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+}
+
+/* media queries */
+
+@media screen and (max-width: 950px) {
+  input {
+    width: 650px;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+
+  .weather-cards-container {
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  body {
+    height: 150vh;
+  }
+
+  /* App component */
+  h1,
+  h2 {
+    word-spacing: 6px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  input {
+    width: 350px;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    margin-left: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem;
+  }
+
+  /* WeatherData component */
+  .weather-cards-container {
+    row-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  body {
+    height: 200vh;
+  }
+}
